@@ -30,6 +30,8 @@ export default {
       } else if (path.match(/^\/api\/photos\/\w+$/) && request.method === 'GET') {
         const id = path.split('/').pop();
         return await handleGetPhoto(request, env, id);
+      } else if (path === '/api/hello' && request.method === 'GET') {
+        return await handleHelloWorld(request, env);
       } else if (path === '/api/photos' && request.method === 'POST') {
         return await handleAddPhoto(request, env);
       } else if (path.match(/^\/api\/photos\/\w+$/) && request.method === 'PUT') {
@@ -886,5 +888,20 @@ async function handleGetR2ObjectCount(request, env) {
         'Access-Control-Allow-Origin': '*'
       }
     });
+  }
+}
+
+// 处理Hello World请求
+async function handleHelloWorld(request, env) {
+  try {
+    const timestamp = new Date().toISOString();
+    return jsonResponse({
+      message: "Hello World from TUI Portfolio API!",
+      timestamp: timestamp,
+      version: "1.0.0"
+    });
+  } catch (error) {
+    console.error('Hello World error:', error);
+    return new Response('Hello World failed: ' + error.message, { status: 500 });
   }
 }
