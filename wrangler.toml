@@ -1,0 +1,12 @@
+name = "james"
+main = "worker.js"
+compatibility_date = "2023-10-30"
+
+[[d1_databases]]
+binding = "data"
+database_name = "tui-portfolio"
+database_id = "964f919f-981e-42ec-9f28-a2766f031f3a"
+
+[[r2_buckets]]
+binding = "images"
+bucket_name = "tui-portfolio-images"
