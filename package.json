@@ -1,0 +1,14 @@
+{
+  "name": "tui-portfolio",
+  "version": "1.0.0",
+  "description": "TUI Portfolio API",
+  "main": "worker.js",
+  "scripts": {
+    "deploy": "wrangler publish"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  }
+}
